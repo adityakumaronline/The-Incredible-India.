@@ -1,0 +1,55 @@
+<html>
+<head>
+<title> Indian Map </title>
+<link rel="stylesheet" href="exploreCSS.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.js" integrity="sha256-OztcN49BsVSoupBpIZaUwczM6+GLsXuA8IJF+W9SsBU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.ind.js" integrity="sha256-dIqkWXhup1J7R2OiniHh0/nH6hw0ELzNSKfBkO1WHlQ=" crossorigin="anonymous"></script>
+    <script>
+        $( function(){
+            var election = new Datamap({
+                scope: 'india',
+                element: document.getElementById('map'),
+                setProjection: function (element) {
+                    var projection = d3.geo.mercator()
+                        .center([78.9629, 23.5937]) // always in [East Latitude, North Longitude]
+                        .scale(1000);
+                    var path = d3.geo.path().projection(projection);
+                    return { path: path, projection: projection };
+                },
+                geographyConfig: {
+                    dataUrl: 'https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/india.topo.json'
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Indian Culture and heritage</h1>
+    <div id="map" style="height: 600px;"></div>
+    <div>
+    <h2>Punjab</h2>
+    <p id="text">Punjab has one of the oldest and richest cultures of the world. Its diversity and uniqueness is evident in the Punjabi poetry, philosophy, spirituality, education, artistry, music, cuisine, science, technology, military warfare, architecture, traditions, values and history. The compassion and high spiritedness exhibited in the lifestyle of people of Punjab (Punjabis) is hard to miss. While the Punjabis are known for their strong determination, their culture presents a multi-hued heritage of ancient civilizations. A guest in Punjab is considered as a representative sent by God and is well looked after.
+    Punjabis celebrate numerous religious and seasonal festivals, such as Dussehra, Diwali, Baisakhi, and many more. There are numerous anniversary celebrations as well in honour of the Gurus (the 10 religious leaders of Sikhism) and various saints. Expressing happiness and gaiety through dance is a typical feature of such festivities, with bhangra, jhumar, and sammi being among the most popular genres. Giddha, a native Punjabi tradition, is a humorous song-and-dance genre performed by women. In addition to Sikh religious music, semi-classical Mughal forms, such as the khyal dance and the thumri, ghazal, and qawwali vocal performance genres, continue to be popular</p>
+    </div>
+    <div >
+        <h2>Bihar</h2>
+        <p id="text">The traditional Bihar society has a vibrant cultural life that includes art, dancing, music, festivals, and fairs. The rich tradition of the Bihari people has been preserved. Bihar's traditional dances are quite entertaining. People sing folk songs to remember some of the significant events. The celebrations are also joyfully and happily observed. People of different religions and faiths coexist by upholding their religious harmony and incorporating the tenets of high thinking and simple living into their daily lives. They are a moderate and giving group that yet identifies with the deeply ingrained culture of regional food habits and dressing senses.
+        Bihar has a rich cultural heritage. The predominant themes are from the myths and legends of Hinduism. The Hindu deities, Lord Rama and His consort, Seeta, and Lord Shiva and His consort, Parvati, form the main theme of folk paintings. Bihar, a land of many Buddhist Monasteries is also known as 'The Land of Buddha'.
+        The beautiful stories of the ancient times are depicted in the exquisite handicrafts of Bihar.
+        One of the art forms of Bihar, the Madhubani School of Painting, has lately received much attention and poularity.
+        Madhubani in the heart of the Mithila region, had a rich tradition of wall paintings done by the village women with vegetable dyes. An artist encouraged them to try their wall paintings on paper and since then Mithila paintings gained ground. These line paintings in primary colors normally depict village scenes, human and animal forms, gods and goddesses</p>
+    </div>
+    <div>
+        <h2>Assam</h2>
+        <p id="text">Assam is the meeting ground of diverse cultures. The people of the enchanting state of Assam are an intermixture of various racial stocks such as Mongoloid, Indo-Burmese, Indo-Iranian and Aryan. The Assamese culture is a rich and exotic tapestry of all these races evolved through a long assimilative process. The natives of the state of Assam are known as "Asomiya" (Assamese), which is also the state language of Assam. The state has a large number of tribes, each unique in its tradition, culture, dress and exotic way of life.
+        Diverse tribes like Bodo, Kachari, Karbi, Miri, Mishimi, Rabha, etc co-exist in Assam; most tribes have their own languages though Assamese is the principal language of the state. A majority of the Assamese are Vaishnavas (a sect of Hinduism). The Vaishnavas do not believe in idol worshiping and perform "Naamkirtana", where the glory of Lord Vishnu is recited. The two important cultural and religious institutions that influence the cultural fabric of Assam: the "Satras", the site of religious and cultural practice which have been in existence for over 400 years and the "Naamghar", the house of prayers. Villagers generally associate on the basis of membership of a local Centre of devotional worship called "Naamghar". Villages are usually made up of families from a number of distinct castes</p>
+    </div>
+    <div>
+        <h2>Tamil Nadu</h2>
+        <p id="text">Hinduism lies at the core of the culture of Tamil Nadu. Among the most famous of the state’s temples, which number in the tens of thousands, are the 7th- and 8th-century structures at Mamallapura, which were designated a UNESCO World Heritage Site in 1984. The gopurams, or gateway towers, of such temples are dominant in most towns, particularly Chidambaram, Kanchipuram, Thanjavur, Madurai, and the Srirangam pilgrimage centre in Tiruchchirappalli. The Hindu Religious and Charitable Endowments Administration Department is responsible for the administration of the state’s temples and sanctuaries.
+        The cycle of temple festivals attracts large congregations of devotees. Noteworthy also are the car festivals, during which large chariots decorated with religious icons are taken in procession around the temple. In addition, Tamil Nadu is scattered with sectarian monastic institutions, or mathas—of which the most important are the Shankara Matha at Kumbakonam and the Vaishnava compound at Srirangam—which hold various activities; Hindu families typically owe allegiance to a number of such institutions.</p>
+    </div>
+</body>
+</html>
